@@ -1,0 +1,37 @@
+{
+  "name": "mermaid-filter",
+  "version": "1.4.7",
+  "description": "Pandoc filter for mermaid",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "./test.sh",
+    "test": "jest"
+  },
+  "keywords": [
+    "pandoc",
+    "mermaid"
+  ],
+  "repository": "https://github.com/raghur/mermaid-filter",
+  "author": "Raghu Rajagopalan",
+  "license": "BSD-2-Clause",
+  "preferGlobal": true,
+  "bin": {
+    "mermaid-filter": "index.js"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^11",
+    "imgur": "^0.3.1",
+    "minimist": ">=0.2.1",
+    "pandoc-filter": "^2.2.0",
+    "sanitize-filename": "1.6.1",
+    "tmp": "^0.0.28"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.5.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.7.0"
+  }
+}

@@ -42,7 +42,8 @@ terminus-font ttf-dejavu ttf-freefont ttf-font-awesome \
 ttf-inconsolata ttf-linux-libertine \
 && fc-cache -f
 
-RUN npm install --global mermaid-filter
+COPY mermaid-filter /mermaid-filter
+RUN cd /mermaid-filter && npm install && npm link
 
 RUN echo '{"args": ["--no-sandbox","--disable-setuid-sandbox"],"executablePath": "/usr/bin/chromium-browser"}' > /tmp/.puppeteer.json
 
