@@ -40,6 +40,7 @@ RUN tlmgr install \
 RUN apk add npm chromium font-noto-cjk font-noto-emoji \
 terminus-font ttf-dejavu ttf-freefont ttf-font-awesome \
 ttf-inconsolata ttf-linux-libertine \
+py-pip \
 && fc-cache -f
 
 COPY mermaid-filter /mermaid-filter
@@ -51,6 +52,8 @@ ENV MERMAID_FILTER_PUPPETEER_CONFIG="/tmp/.puppeteer.json"
 
 ENV PUPPETEER_SKIP_DOWNLOAD="true" \
     PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium-browser"
+
+RUN pip install -U pandoc-mustache --break-system-packages
 
 # Override the ENTRYPOINT to use a shell
 #ENTRYPOINT ["/bin/sh", "-c"]
