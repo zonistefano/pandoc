@@ -53,7 +53,8 @@ ENV MERMAID_FILTER_PUPPETEER_CONFIG="/tmp/.puppeteer.json"
 ENV PUPPETEER_SKIP_DOWNLOAD="true" \
     PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium-browser"
 
-RUN pip install -U pandoc-mustache --break-system-packages
+COPY pandoc-mustache /pandoc-mustache
+RUN cd /pandoc-mustache && pip install --no-cache-dir --break-system-packages .
 
 # Override the ENTRYPOINT to use a shell
 #ENTRYPOINT ["/bin/sh", "-c"]
