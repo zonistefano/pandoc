@@ -56,6 +56,8 @@ ENV PUPPETEER_SKIP_DOWNLOAD="true" \
 COPY pandoc-mustache /pandoc-mustache
 RUN cd /pandoc-mustache && pip install --no-cache-dir --break-system-packages .
 
+COPY combine_filter/combine.lua /combine.lua
+
 # Override the ENTRYPOINT to use a shell
 #ENTRYPOINT ["/bin/sh", "-c"]
 
