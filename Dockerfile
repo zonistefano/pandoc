@@ -35,7 +35,8 @@ RUN tlmgr install \
     selnolig \
     bookmark \
     xurl \
-    caption
+    caption \
+    framed
     
 RUN apk add npm chromium font-noto-cjk font-noto-emoji \
 terminus-font ttf-dejavu ttf-freefont ttf-font-awesome \
